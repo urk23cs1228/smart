@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eddy Current Maze</title>
+<link rel="stylesheet" href="css/eddy.css">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+</head>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,or', // English & Odia
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // Toggle dropdown when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+<div class="lab-container">
+  <h1>🌀 Eddy Current Maze 🌀</h1>
+  <div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+
+  <div class="maze-area" id="maze">
+    <div class="ball" id="ball"></div>
+    <div class="drop-zone" id="dropZone">Drop Plate Here</div>
+  </div>
+ 
+  <div class="plate-area">
+    <div class="plate solid" draggable="true" id="solidPlate">Solid Plate</div>
+    <div class="plate slitted" draggable="true" id="slittedPlate">Slitted Plate</div>
+  </div>
+ 
+  <button class="btn" onclick="dropBall()">Drop Ball</button>
+  <div class="message" id="message"></div>
+  <button class="btn" onclick="submitProgress()">Submit</button>
+<div class="message" id="submitMessage"></div>
+</div>
+ <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+<script src="js/eddy.js" defer></script>
+</body>
+</html>

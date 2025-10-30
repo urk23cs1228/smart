@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Torque Balancer — Neon eSports (Royal Blue & Peacock Green)</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/torque.css">
+<script src="js/torque.js" defer></script>
+</head>
+<body>
+  <div class="card" role="application" aria-label="Torque Balancer Neon eSports">
+    <header>
+      <h1>⚡ Torque Balancer — Neon eSports</h1>
+      <div class="hud" aria-hidden="false">
+        <div class="stat"><div class="label">SCORE</div><div id="score" class="value">0</div></div>
+        <div class="stat"><div class="label">TIME</div><div id="time" class="value">30</div></div>
+        <div class="stat"><div class="label">ROUND</div><div id="round" class="value">1</div></div>
+      </div>
+    </header>
+ 
+    <div class="layout">
+      <div class="play">
+        <div class="arena" id="arena" aria-live="polite">
+          <div class="beam" id="beam" aria-hidden="true"></div>
+          <div class="pivot" aria-hidden="true"></div>
+          <div class="ground"></div>
+ 
+          <!-- container for placed weight elements (positioned relative to beam) -->
+          <div id="placed-container" style="position:absolute; width:740px; height:0; top: 214px; left: calc(50% - 370px); pointer-events:none;"></div>
+ 
+          <!-- overlay -->
+          <div class="overlay" id="overlay">
+            <div class="box">
+              <div style="font-size:20px;color:var(--neon-cyan);font-weight:800">⏳ Game Over</div>
+              <div style="height:8px"></div>
+              <div class="score-big" id="finalScore">0</div>
+              <div style="height:10px"></div>
+              <button class="next-btn" id="playAgainBtn">Play Again</button>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <aside class="side">
+        <div class="panel">
+          <h3>INSTRUCTIONS</h3>
+          <div class="instructions">Drag neon weights onto the beam. Balance torques to score. Press <strong>Next Round</strong> after a correct balance.</div>
+          <div style="height:10px"></div>
+ 
+          <div style="margin-bottom:10px">
+            <div style="font-size:13px;color:rgba(255,255,255,0.7)">Torque (live):</div>
+            <div id="torqueDisplay" style="font-weight:800;font-size:18px;margin-top:6px;color:var(--neon-cyan)">Στ = 0</div>
+          </div>
+ 
+          <div style="height:6px"></div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-bottom:8px;">Available Weights</div>
+          <div class="pool" id="pool" aria-label="Weight pool"></div>
+ 
+          <div style="height:12px"></div>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <button id="nextRoundBtn" class="next-btn" style="display:none">Next Round →</button>
+            <button id="resetBtn" class="next-btn" style="background:linear-gradient(90deg,#ff9a00,#ffd600)">Reset Round</button>
+            <div style="flex:1"></div>
+          </div>
+        </div>
+ 
+        <div style="height:12px"></div>
+ 
+        <div class="panel" style="margin-top:14px">
+          <h3>ROUND HINT</h3>
+          <div id="hint" style="color:rgba(255,255,255,0.85)">Balance quickly — you get <strong>+10</strong> points each correct round.</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+ 
+
+</body>
+</html>

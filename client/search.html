@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Grid Reveal</title>
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+    <script src="js/search.js" defer></script>
+   
+</head>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,or', // English & Odia
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // Toggle dropdown when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">Search Grid Reveal</div>
+            <div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+
+            <div class="score-display">
+                <div>Moves: <span id="moves">0</span></div>
+                <div>Found: <span id="found">0</span>/10</div>
+            </div>
+        </div>
+ 
+        <div class="game-area">
+            <div class="mode-selector">
+                <button class="mode-btn active" onclick="setMode('linear')">Linear Search</button>
+                <button class="mode-btn" onclick="setMode('binary')">Binary Search</button>
+            </div>
+ 
+            <div class="target-display">
+                Find number: <span id="target">5</span>
+            </div>
+ 
+            <div class="grid" id="grid">
+                <!-- Cards will be generated here -->
+            </div>
+ 
+            <div class="magnifier" id="magnifier"></div>
+ 
+            <div class="hint" id="hint"></div>
+        </div>
+ 
+        <div class="progress-sidebar">
+            <div class="progress-title">Round Progress</div>
+            <div class="question-grid" id="questionGrid">
+                <!-- Question numbers will be generated here -->
+            </div>
+            <div class="stats">
+                <div>Mode: <span id="currentMode">Linear</span></div>
+                <div>Round: <span id="currentRound">1</span>/10</div>
+            </div>
+        </div>
+ 
+        <div class="footer">
+            <button class="btn submit-btn" onclick="submitAnswer()">Submit</button>
+            <button class="btn check-btn" onclick="checkAnswer()">Check Answer</button>
+            <button class="btn finish-btn" onclick="finishTest()">Finish Test</button>
+        </div>
+    </div>
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+</body>
+</html>

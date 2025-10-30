@@ -1,0 +1,198 @@
+body{
+    background:white;
+    font-family: Arial, sans-serif;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color:rgb(233, 21, 233);
+}
+.header h1{
+    font-size:30px;
+}
+.gradient-text {
+      font-weight: bold;
+      background: linear-gradient(180deg, #b611fd, #00a3ee);
+      background-clip: text; 
+      color: transparent; 
+}
+.header p{
+    font-size: 20px;
+    margin-top: 2px;
+}
+.grade-selection{
+  padding:20px;
+  width: 100%;
+}
+.grade-container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+    gap:20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+}
+.grade-card{
+  background: white;
+  border:1px solid #ddd;
+  border-radius: 10px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.3);
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease,box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.grade-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 8px 15px rgba(0,0,0,0.3);
+}
+.grade-info h2{
+  font-size: 24px;
+  margin:0;
+
+}
+.grade-info{
+  display: flex;
+  align-items: center;
+  gap:10px;
+}
+.grade-info i{
+  margin-right:0px ;
+  display: block;
+  font-size: 20px;
+}
+
+.grade-card .fa-square-root-variable,
+.grade-card .fa-calculator {
+  color: #007bff; /* Blue for Math */
+}
+
+.grade-card .fa-atom {
+  color: #ff5733; /* Orange-red for Physics */
+}
+
+.grade-card .fa-flask-vial,
+.grade-card .fa-flask {
+  color: #28a745; /* Green for Chemistry */
+}
+
+.grade-card .fa-dna {
+  color: #8e44ad; /* Purple for Biology */
+}
+
+.grade-card .fa-laptop-code,
+.grade-card .fa-code {
+  color: #17a2b8; /* Teal for Computer Science */
+}
+
+.grade-card .fa-leaf,
+.grade-card .fa-earth-americas {
+  color: #2ecc71; /* Bright green for Environment */
+}
+.grade-detail{
+  margin-top: 40px;
+  font-size: 16px;
+  color:#555;
+
+}
+.start-quiz-btn{
+  margin-top:15px;
+  margin-right: 150px;
+  padding:10px 20px;
+  border: none;
+  border-radius:5px;
+  background:#6c63ff;
+  color:white;
+  cursor: pointer;
+  font-size: 16px;
+  transition:background 0.3s ease;
+}
+.start-quiz-btn:hover{
+  background:#574fd6;
+}
+.grade-detail p{
+  font-weight: bold;
+  color:#333;
+  text-align: left;
+}
+/* Position container top right */
+#translate-container {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+/* Hide the default Google dropdown until button is clicked */
+#google_translate_element {
+  display: none;
+  margin-top: 8px;
+}
+
+/* Style for your translate button */
+#translate-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+/* Colored grade-card variants */
+.grade-card.yellow {
+  background-color: #f9ed81;
+}
+
+.grade-card.blue {
+  background-color: #81b3f9;
+}
+
+.grade-card.red {
+  background-color: #f98181;
+}
+
+.grade-card.green {
+  background-color: #81f9b3;
+}
+
+.grade-card.purple {
+  background-color: #d981f9;
+}
+
+.grade-card.orange {
+  background-color: #f9a981;
+}
+
+.grade-card.violet {
+  background-color: #b981f9;
+}
+
+#translate-btn:hover {
+  background: #388E3C;
+}
+.back-btn {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  background: #1976D2;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+
+.back-btn:hover {
+  background: #0D47A1;
+}

@@ -1,0 +1,138 @@
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at center, #3C3744 0%, #090C9B 100%);
+      font-family: 'Orbitron', sans-serif;
+      color: #FBFFF1;
+      overflow: hidden;
+    }
+ 
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(#3D52D560 1px, transparent 1px),
+                  linear-gradient(90deg, #3D52D560 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: gridMove 12s linear infinite;
+      z-index: -1;
+    }
+    @keyframes gridMove {
+      from { background-position: 0 0, 0 0; }
+      to { background-position: 50px 50px, 50px 50px; }
+    }
+ #top-right-controls {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  text-align: right;
+  z-index: 1000;
+}
+
+#top-right-controls button {
+  background-color: #ffbf47;
+  color: #2a1f00;
+  border: none;
+  padding: 8px 12px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+#top-right-controls button:hover {
+  background-color: #ffdc7f;
+}
+
+#top-right-controls #progressPercent {
+  font-size: 0.9rem;
+  color: #111;
+}
+
+    header {
+      font-size: 2.5rem;
+      padding: 20px;
+      text-align: center;
+      text-shadow: 0 0 20px #3D52D5, 0 0 40px #3D52D5;
+      animation: neonPulse 2s infinite alternate;
+      color: #FBFFF1;
+    }
+    @keyframes neonPulse {
+      from { text-shadow: 0 0 20px #3D52D5; }
+      to { text-shadow: 0 0 40px #B4C5E4, 0 0 80px #B4C5E4; }
+    }
+ 
+    #hud {
+      display: flex;
+      justify-content: space-around;
+      font-size: 1.2rem;
+      margin: 10px 0 20px;
+      text-shadow: 0 0 10px #FBFFF1;
+    }
+ 
+    #instructions {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #B4C5E4;
+      animation: pulseText 1.5s infinite;
+    }
+    @keyframes pulseText {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+ 
+    #game-area {
+      position: relative;
+      width: 800px;
+      height: 500px;
+      margin: 20px auto;
+      border: 3px solid #3D52D5;
+      border-radius: 15px;
+      box-shadow: 0 0 30px #3D52D5, inset 0 0 30px #3C3744;
+      background: rgba(255,255,255,0.05);
+      overflow: hidden;
+    }
+ 
+    .target {
+      position: absolute;
+      padding: 15px 20px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      color: #FBFFF1;
+      cursor: pointer;
+      background: #090C9B;
+      border: 2px solid #B4C5E4;
+      box-shadow: 0 0 15px #3D52D5;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .target:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 30px #FBFFF1;
+    }
+ 
+    #result {
+      margin-top: 20px;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+ 
+    .neon-win {
+      color: #B4C5E4;
+      text-shadow: 0 0 20px #B4C5E4, 0 0 40px #FBFFF1;
+      animation: winPulse 1s infinite alternate;
+    }
+    @keyframes winPulse {
+      from { text-shadow: 0 0 20px #B4C5E4; }
+      to { text-shadow: 0 0 40px #FBFFF1, 0 0 80px #FBFFF1; }
+    }
+ 
+    .misfire {
+      color: #F33;
+      text-shadow: 0 0 20px #F33, 0 0 40px #F00;
+      animation: misfirePulse 0.5s alternate 2;
+    }
+    @keyframes misfirePulse {
+      from { opacity: 1; }
+      to { opacity: 0.3; }
+    }

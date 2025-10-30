@@ -1,0 +1,154 @@
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      background: #f4f7fb;
+    }
+
+    /* Sidebar (students list) */
+    .sidebar {
+      width: 35%;
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .student-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .student-list li {
+      padding: 12px;
+      margin: 8px 0;
+      background: #34495e;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .student-list li:hover {
+      background: #1abc9c;
+    }
+
+    .progress-badge {
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .excellent { background: #27ae60; }
+    .good { background: #f39c12; }
+    .poor { background: #e74c3c; }
+
+    /* Details section */
+    .details {
+      flex: 1;
+      padding: 20px;
+      background: white;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .details h2 {
+      margin-top: 0;
+    }
+
+    .subject {
+      margin-bottom: 20px;
+    }
+
+    .game-progress {
+      margin-left: 20px;
+      margin-top: 5px;
+    }
+
+    .overall-status {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      background: #ecf0f1;
+    }
+
+    /* Assign button */
+    #assignBtn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 8px 14px;
+      background: #1abc9c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    #assignBtn i {
+      margin-right: 6px;
+    }
+
+    /* Modal */
+    #assignModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+    }
+
+    #assignModal.show{
+      display: flex;
+    }
+
+    #assignModal .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 350px;
+    }
+
+    #assignModal h3 {
+      margin-top: 0;
+    }
+
+    #assignModal select, 
+    #assignModal input {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0 12px;
+    }
+
+    #assignModal button {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #confirmAssign {
+      background: #27ae60;
+      color: white;
+    }
+
+    #closeModal {
+      background: #e74c3c;
+      color: white;
+      margin-left: 10px;
+    }

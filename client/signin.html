@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - STEMQUEST</title>
+  <link rel="stylesheet" href="css/signin.css">
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+   
+</head>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,or', // English & Odia
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // Toggle dropdown when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+  <div class="auth-container">
+    <div class="auth-box">
+      <h1>Sign In</h1>
+      <div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p id="error-msg"></p>
+
+      <!-- 🔹 Register link -->
+      <p>Don’t have an account? <a href="register.html">Register here</a></p>
+    </div>
+  </div>
+  <script type="module" src="./firebase-config.js"></script>
+
+ <script src="js/signin.js"></script>
+</body>
+</html>

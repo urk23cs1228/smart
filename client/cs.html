@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemistry</title>
+  <link rel="stylesheet" href="css/cs.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+  <script src="js/cs.js" defer></script>
+  <script>
+    // ✅ Load saved Stack Game score from localStorage
+    window.onload = function () {
+      const score = localStorage.getItem("stackGameFinalScore");
+      if (score !== null) {
+        document.getElementById("csScoreDisplay").textContent =
+          `Your Score: ${score}% ✅`;
+      } else {
+        document.getElementById("csScoreDisplay").textContent =
+          "No score yet. Play the game!";
+      }
+    };
+  </script>
+</head>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,or', // English & Odia
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // Toggle dropdown when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+  <header>
+    <div class="header">
+        <h1 class="gradient-text">Select your Game to learn</h1>
+        <p>Choose your chapter</p>
+        <div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+
+    </div>
+  </header>
+
+  <main>
+    <section class="class-selection">
+      <div class="class-container">
+        
+        <!-- Stack Game Card -->
+       <!-- Stack Game Card -->
+<div class="class-card blue">
+  <h2>Stack Game</h2>
+  <a href="stack.html" style="text-decoration: none;">
+    <div id="csScoreDisplay" style="font-weight:bold; color:green;"></div>
+    <p>Test your stack operations knowledge through an interactive game!</p>
+  </a>
+</div>
+
+<!-- Search Game Card -->
+<div class="class-card green">
+  <h2>Search Game</h2>
+  <a href="search.html" style="text-decoration: none;">
+    <div id="searchScoreDisplay" style="font-weight:bold; color:green;"></div>
+    <p>Sharpen your searching skills with this fun challenge!</p>
+  </a>
+</div>
+
+<!-- Sorting Shuffle Card -->
+<div class="class-card red">
+  <h2>Sorting Shuffle</h2>
+  <a href="sorting.html" style="text-decoration: none;">
+    <div id="sortingScoreDisplay" style="font-weight:bold; color:green;"></div>
+    <p>Explore advanced topics and enhance your problem-solving skills through fun games.</p>
+  </a>
+</div>
+
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+  </footer>
+</body>
+</html>

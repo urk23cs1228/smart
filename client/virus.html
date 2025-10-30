@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virus Mutation Chase 🦠</title>
+<link rel="stylesheet" href="css/virus.css">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+</head>
+<body>
+ 
+<div class="game-container">
+  <h1>🦠 Virus Mutation Chase 🦠</h1>
+  <div class="instructions">Catch the virus by typing the <b>complementary DNA sequence</b> before it mutates fully!</div>
+ 
+  <div class="dna" id="dnaSeq">ATGC</div>
+ 
+  <input type="text" id="playerInput" placeholder="Enter complementary DNA..." />
+  <br>
+  <button class="btn" onclick="submitAnswer()">Submit</button>
+  <button class="btn" onclick="nextRound()">Next Round</button>
+  <button class="btn finish-btn" onclick="finishGame()">Finish</button>
+ 
+ 
+  <div class="message" id="message"></div>
+  <div class="score">Score: <span id="score">0</span></div>
+</div>
+ <footer>
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+  </footer>
+ 
+<script src="js/virus.js" defer></script>
+</body>
+</html>

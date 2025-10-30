@@ -1,0 +1,173 @@
+
+  * {margin:0; padding:0; box-sizing:border-box;}
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at center, #660000, #1a0000);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+  }
+  .lab-container {
+    width: 95%;
+    max-width: 1000px;
+    background: #fff8dc;
+    border: 3px solid #cc0000;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 0 40px #ff3333;
+    text-align: center;
+    position: relative;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #cc0000;
+    text-shadow: 0 0 15px #ff6666, 0 0 25px #ff3333;
+    animation: pulse 2s infinite alternate;
+  }
+  @keyframes pulse {
+    from { text-shadow: 0 0 10px #ffcc66; }
+    to { text-shadow: 0 0 25px #ffcc00, 0 0 40px #ff3333; }
+  }
+ 
+  .maze-area {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #cc0000;
+    border-radius: 15px;
+    background: linear-gradient(180deg, #ffd700, #ffcc33, #cc9900);
+    overflow: hidden;
+  }
+  .ball {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #fff, #cc0000);
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px #ff3333;
+  }
+  .plate-area {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .plate {
+    width: 120px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: grab;
+    user-select: none;
+    color: black;
+    box-shadow: 0 0 15px #cc0000;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .plate:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff3333, 0 0 40px #ffcc00;
+  }
+  .solid { background: linear-gradient(135deg, gold, goldenrod); }
+  .slitted { background: repeating-linear-gradient(90deg, gold, goldenrod 20px, #fff8dc 20px, #fff8dc 30px); }
+ 
+  .drop-zone {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 40px;
+    border: 2px dashed #cc0000;
+    border-radius: 8px;
+    background: rgba(255,0,0,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #cc0000;
+    font-weight: bold;
+  }
+ 
+  .btn {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffcc66, #cc0000);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1.2rem;
+    transition: all 0.3s;
+  }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #ffcc00;
+  }
+ 
+  .message {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+    min-height: 40px;
+    color: black;
+  }
+  .success {background:#ffcc66;}
+  .error {background:#ff4444; color:white;}
+/* Position container top right */
+#translate-container {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+/* Hide the default Google dropdown until button is clicked */
+#google_translate_element {
+  display: none;
+  margin-top: 8px;
+}
+
+/* Style for your translate button */
+#translate-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+
+#translate-btn:hover {
+  background: #388E3C;
+}
+.back-btn {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  background: #1976D2;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+
+.back-btn:hover {
+  background: #0D47A1;
+}

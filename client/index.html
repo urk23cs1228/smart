@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamified Learning Platform</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Font Awesome CDN -->
+   <script type="module" src="./firebase-config.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="css/chatbot.css">
+
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+<link rel="icon" href="data:,">
+
+</head>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+  <header>
+    <div class="header">
+      <div class="logo-text">
+        <img src="images/logo1.png" alt="logo" class="logo"/>
+        <div class="logo-text-p">
+          <h1 class="gradient-text">StemQuest</h1>
+          <p>Learn.Play.Grow</p>
+          <div id="translate-container">
+            <button id="translate-btn">🌐 Translate</button>
+            <div id="google_translate_element"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔔 Notify + 👤 User Info -->
+    <div class="top-right">
+      <button class="notify-btn" id="notifyBtn">
+        <i class="fa-solid fa-bell"></i>
+        <span class="badge">0</span>
+      </button>
+      <div class="dropdown" id="notifyDropdown"></div>
+
+      <div class="user-info">
+        <i class="fa-solid fa-user"></i>
+        <span id="usernameDisplay">Loading...</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Learn STEM Through</h1>
+      <h1 class="highlight"><mark> Interactive Games</mark></h1>
+      <p>Experience Science, Technology, Engineering, Mathematics like never before.</p>
+      <p>Designed for rural schools with offline capabilites and multilingual support.</p>
+      <div class="btns">
+        <button onclick="classes()" class="start-btn"><i class="fa-solid fa-play"></i> Start Learning</button>
+        <button onclick="progress()" class="prog-btn"><i class="fa-solid fa-medal"></i> View Progress</button>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h1>Why choosing STEMQuest?</h1>
+        <p>Built specially for rural education challenges</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="card game-type">
+          <div class="icon purple"><i class="fa-solid fa-play"></i></div>
+          <p>Multiple engaging game formats to run different learning styles and preferences</p>
+        </div>
+        <div class="card access-type">
+          <div class="icon blue"><i class="fa-solid fa-user"></i></div>
+          <p>Works with limited internet connection, perfect for areas with limited connectivity</p>
+        </div>
+        <div class="card progress-type">
+          <div class="icon green"><i class="fa-solid fa-medal"></i></div>
+          <p>Comprehensive analytics for teachers and students to monitor learning progress</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer">
+      <p>&copy; 2025 STEMQUEST. Empowering rural education through technology</p>
+    </div>
+  </footer>
+
+  <!-- Chatbot -->
+<div id="chatbot-container">
+  <div id="chatbot-messages"></div>
+  <input type="text" id="chatbot-text" placeholder="Ask me anything..."/>
+  <button onclick="sendMessage()">Send</button>
+  <button id="closeChatBtn">✖</button>
+</div>
+
+
+  <script src="js/index.js"></script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => {
+          console.log('✅ Service Worker registered: ', reg);
+        })
+        .catch(err => {
+          console.log('❌ Service Worker registration failed: ', err);
+        });
+    });
+  }
+</script>
+<script>
+  // Temporary "login simulation" until you hook real auth
+  if (!localStorage.getItem("currentUser")) {
+    // change this for testing: "teacher" / "student1" / "student2"
+    localStorage.setItem("currentUser", "student1");
+  }
+
+  // Show username in header
+  const userDisplay = document.getElementById("usernameDisplay");
+  userDisplay.textContent = localStorage.getItem("currentUser");
+</script>
+<script type="module" src="./firebase-config.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

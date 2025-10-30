@@ -1,0 +1,77 @@
+/* General page style */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fc;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.container {
+  width: 400px;
+  margin: 80px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 10px;
+  background: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #0055aa;
+}
+
+/* Position container top right */
+#translate-container {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+/* Hide the default Google dropdown until button is clicked */
+#google_translate_element {
+  display: none;
+  margin-top: 8px;
+}
+
+/* Style for your translate button */
+#translate-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+
+#translate-btn:hover {
+  background: #388E3C;
+}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Integral Curve Catcher — Interactive Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/integral.css">
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+</head>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,or', // English & Odia
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // Toggle dropdown when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+  <div id="left">
+    <h1>Integral Curve Catcher 🎨</h1>
+     <div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+    <div id="canvasWrap">
+      <canvas id="chart"></canvas>
+    </div>
+
+    <div class="controls">
+      <button id="shadeBtn">Shade (after selecting)</button>
+      <button id="undoBtn">Undo</button>
+      <button id="checkBtn">Check Answer</button>
+      <button id="nextBtn">Next</button>
+      <button id="finishBtn" style="background:#ffbf47;color:#2a1f00">Finish Test</button>
+    </div>
+
+    <div id="hint">
+      Click once to pick START on the x-axis, click again to pick END. Then click <strong>Shade</strong> to draw your shading. Click <strong>Check Answer</strong> to reveal the correct area and mark the question.
+    </div>
+  </div>
+
+  <div id="right">
+    <div id="questionPanel">
+      <div id="questionText">Loading question...</div>
+
+      <div class="qgrid" id="qList"></div>
+
+      <div id="progressBox">
+        <div id="scoreText">Score: 0</div>
+        <div id="progressPercent">Progress: 0%</div>
+        <div id="currentQ">Current: 1 / 10</div>
+      </div>
+
+      <div id="finishBox">
+        <button id="finishBtnRight" style="background:#ff7b7b">Finish Test</button>
+        <div style="flex:1"></div>
+      </div>
+
+      <div id="finalReport"></div>
+    </div>
+  </div>
+   <footer>
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+  </footer>
+
+<script src="js/integral.js" defer></script>
+</body>
+</html>

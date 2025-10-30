@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - STEMQUEST</title>
+  <link rel="stylesheet" href="css/signin.css">
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+</head>
+
+<!-- Google Translate -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,or',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+  <div class="auth-container">
+    <div class="auth-box">
+      <h1>Register</h1>
+
+      <div id="translate-container">
+        <button id="translate-btn">🌐 Translate</button>
+        <div id="google_translate_element"></div>
+      </div>
+
+      <form id="registerForm">
+        <input type="text" id="regUsername" placeholder="Username" required>
+        <input type="password" id="regPassword" placeholder="Password" required>
+        <input type="password" id="regConfirmPassword" placeholder="Confirm Password" required>
+
+        <!-- New: Class dropdown -->
+        <label for="regClass">Class:</label>
+        <select id="regClass" required>
+          <option value="">Select Class</option>
+          <option value="6">6th</option>
+          <option value="7">7th</option>
+          <option value="8">8th</option>
+          <option value="9">9th</option>
+          <option value="10">10th</option>
+          <option value="11">11th</option>
+          <option value="12">12th</option>
+        </select>
+
+        <!-- New: School Name -->
+        <input type="text" id="regSchool" placeholder="School Name" required>
+
+        <!-- Hidden role field -->
+        <input type="hidden" id="regRole" value="student">
+
+        <button type="submit">Register</button>
+      </form>
+      
+      <p id="reg-msg"></p>
+      <p>Already have an account? <a href="signin.html">Login here</a></p>
+    </div>
+  </div>
+<script type="module" src="./firebase-config.js"></script>
+
+  <script src="js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorting Shuffle Game</title>
+  <link rel="stylesheet" href="css/sorting.css"/>
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+  
+</head>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,or', // English & Odia
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // Toggle dropdown when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+  <div class="game-container">
+    <h1>Sorting Shuffle</h1>
+    <div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+
+ 
+    <div class="cards-container" id="cards"></div>
+ 
+    <div class="controls">
+      <button class="btn" onclick="shuffleCards()">🔀 Shuffle</button>
+      <button class="btn" onclick="checkOrder()">✅ Submit</button>
+      <button class="btn" onclick="showBubbleSort()">🤖 Bubble Sort</button>
+    </div>
+ 
+    <div class="message" id="message"></div>
+ 
+    <div class="bubble-steps" id="bubbleSteps"></div>
+  </div>
+  <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+ 
+  <script src="js/sorting.js" defer></script>
+</body>
+</html>
+ 

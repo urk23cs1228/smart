@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Progress Tracker</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/progress.css">
+</head>
+<body>
+
+  <!-- Left side: Student List -->
+  <div class="sidebar">
+    <h2>Class 12 - Students</h2>
+    <ul class="student-list" id="studentList">
+      <!-- JS will populate students -->
+    </ul>
+  </div>
+
+  <!-- Right side: Student Details -->
+ <div class="details" id="studentDetails">
+  <button id="assignBtn"><i class="fa fa-tasks"></i> Assign</button>
+  <div class="details-content">
+    <h2>Select a student</h2>
+    <p>Click on a student name from the left to view progress details.</p>
+  </div>
+</div>
+
+
+
+  <!-- Assignment Modal -->
+    <!-- Assignment Modal -->
+  <div id="assignModal" class="modal">
+    <div class="modal-content">
+      <h3>Assign Task</h3>
+
+      <label>Subject:</label>
+      <select id="subjectSelect">
+        <option value="">-- Select --</option>
+        <option value="Biology">Biology</option>
+        <!-- add more subjects later -->
+      </select>
+
+      <!-- Topics area will be populated dynamically based on subject -->
+      <div id="topicsContainer" style="margin-top:12px;">
+        <label>Topics / Games:</label>
+        <div id="topicsList">
+          <!-- checkboxes added here -->
+        </div>
+      </div>
+
+      <label style="margin-top:12px;">Assign to:</label>
+      <select id="assignType">
+        <option value="all">All Students</option>
+        <option value="specific">Specific Students</option>
+      </select>
+
+      <div id="studentSelectDiv" style="display:none; margin-top:8px;">
+        <label>Choose student(s):</label>
+        <!-- multi-select to pick one or many students -->
+        <select id="studentMultiSelect" multiple size="6" style="width:100%; padding:8px;">
+          <!-- options populated by JS -->
+        </select>
+        <small>Hold Ctrl / Cmd to select multiple.</small>
+      </div>
+
+      <div style="display:flex; gap:8px; margin-top:14px;">
+        <button id="confirmAssign" class="btn btn-confirm">Confirm</button>
+        <button id="closeModal" class="btn btn-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/progress.js" defer></script>
+</body>
+</html>

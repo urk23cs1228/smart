@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemistry</title>
+  <link rel="stylesheet" href="css/phy.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+  
+</head>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,ta', // English & Odia
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // Toggle dropdown when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<body>
+  <header>
+    <div class="header">
+        <h1 class="gradient-text ">Select your Game to learn</h1>
+        <p>Choose your chapter</p>
+        <div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+
+    </div>
+  </header>
+
+  <main>
+  <section class="class-selection">
+    <div class="class-container">
+      
+      <!-- Balance Chemical Equations Card -->
+      <div class="class-card yellow" onclick="goToGames('6')">
+        <div class="default-content">
+          <a href="circuit.html" style="text-decoration: none;">
+          <h2>Connect the Circuit</h2>
+          <div id="circuitScoreDisplay" style="font-weight:bold; color:green;"></div>
+          <p>Begin your STEM adventure with foundational concepts and interactive games.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Periodic Table Card -->
+      <div class="class-card blue" onclick="goToGames('7')">
+        <a href="ohms.html" style="text-decoration: none;">
+        <h2>Ohms Law Lab</h2>
+        <div id="ohmsScoreDisplay" style="font-weight:bold; color:green;"></div>
+        <p>Dive deeper into STEM subjects with engaging activities and challenges.</p>
+        </a>
+      </div>
+
+      <!-- Class 8 Card -->
+      <div class="class-card red" onclick="goToGames('8')">
+        <a href="eddy.html" style="text-decoration: none;">
+        <h2>Eddy Current</h2>
+        <div id="eddyScoreDisplay" style="font-weight:bold; color:green;"></div>
+        <p>Explore advanced topics and enhance your problem-solving skills through fun games.</p>
+        </a>
+        
+      </div>
+
+    </div>
+  </section>
+</main>
+
+  <footer>
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+  </footer>
+  <script src="js/phy.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Periodic Table Game</title>
+  <link rel="stylesheet" href="css/periodic.css">
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+  <script src="js/periodic.js" defer></script>
+</head>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,or', // English & Odia
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // Toggle dropdown when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header">
+      <h1>Periodic Table Questions</h1>
+      <div id="score">Score: 0</div>
+      <div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="main-layout">
+    <!-- Left side: Periodic Table -->
+    <section class="table-area">
+      <h2>Periodic Table</h2>
+      <div class="table">
+        <!-- Row 1 -->
+        <button title="Hydrogen">H</button>
+        <div class="empty" style="grid-column: span 16;"></div>
+        <button title="Helium">He</button>
+
+        <!-- Row 2 -->
+        <button title="Lithium">Li</button>
+        <button title="Beryllium">Be</button>
+        <div class="empty" style="grid-column: span 10;"></div>
+        <button title="Boron">B</button>
+        <button title="Carbon">C</button>
+        <button title="Nitrogen">N</button>
+        <button title="Oxygen">O</button>
+        <button title="Fluorine">F</button>
+        <button title="Neon">Ne</button>
+
+        <!-- Row 3 -->
+        <button title="Sodium">Na</button>
+        <button title="Magnesium">Mg</button>
+        <div class="empty" style="grid-column: span 10;"></div>
+        <button title="Aluminium">Al</button>
+        <button title="Silicon">Si</button>
+        <button title="Phosphorus">P</button>
+        <button title="Sulfur">S</button>
+        <button title="Chlorine">Cl</button>
+        <button title="Argon">Ar</button>
+
+        <!-- Row 4 -->
+        <button title="Potassium">K</button>
+        <button title="Calcium">Ca</button>
+        <button title="Scandium">Sc</button>
+        <button title="Titanium">Ti</button>
+        <button title="Vanadium">V</button>
+        <button title="Chromium">Cr</button>
+        <button title="Manganese">Mn</button>
+        <button title="Iron">Fe</button>
+        <button title="Cobalt">Co</button>
+        <button title="Nickel">Ni</button>
+        <button title="Copper">Cu</button>
+        <button title="Zinc">Zn</button>
+        <button title="Gallium">Ga</button>
+        <button title="Germanium">Ge</button>
+        <button title="Arsenic">As</button>
+        <button title="Selenium">Se</button>
+        <button title="Bromine">Br</button>
+        <button title="Krypton">Kr</button>
+
+        <!-- Row 5 -->
+        <button title="Rubidium">Rb</button>
+        <button title="Strontium">Sr</button>
+        <button title="Yttrium">Y</button>
+        <button title="Zirconium">Zr</button>
+        <button title="Niobium">Nb</button>
+        <button title="Molybdenum">Mo</button>
+        <button title="Technetium">Tc</button>
+        <button title="Ruthenium">Ru</button>
+        <button title="Rhodium">Rh</button>
+        <button title="Palladium">Pd</button>
+        <button title="Silver">Ag</button>
+        <button title="Cadmium">Cd</button>
+        <button title="Indium">In</button>
+        <button title="Tin">Sn</button>
+        <button title="Antimony">Sb</button>
+        <button title="Tellurium">Te</button>
+        <button title="Iodine">I</button>
+        <button title="Xenon">Xe</button>
+
+        <!-- Row 6 -->
+        <button title="Caesium">Cs</button>
+        <button title="Barium">Ba</button>
+        <button title="Lanthanoids">La to Lu</button>
+        <button title="Hafnium">Hf</button>
+        <button title="Tantalum">Ta</button>
+        <button title="Tungsten">W</button>
+        <button title="Rhenium">Re</button>
+        <button title="Osmium">Os</button>
+        <button title="Iridium">Ir</button>
+        <button title="Platinum">Pt</button>
+        <button title="Gold">Au</button>
+        <button title="Mercury">Hg</button>
+        <button title="Thallium">Tl</button>
+        <button title="Lead">Pb</button>
+        <button title="Bismuth">Bi</button>
+        <button title="Polonium">Po</button>
+        <button title="Astatine">At</button>
+        <button title="Radon">Rn</button>
+
+        <!-- Row 7 -->
+        <button title="Francium">Fr</button>
+        <button title="Radium">Ra</button>
+        <button title="Actinoids">Ac to Lr</button>
+        <button title="Rutherfordium">Rf</button>
+        <button title="Dubnium">Db</button>
+        <button title="Seaborgium">Sg</button>
+        <button title="Bohrium">Bh</button>
+        <button title="Hassium">Hs</button>
+        <button title="Meitnerium">Mt</button>
+        <button title="Darmstadtium">Ds</button>
+        <button title="Roentgenium">Rg</button>
+        <button title="Copernicium">Cn</button>
+        <button title="Nihonium">Nh</button>
+        <button title="Flerovium">Fl</button>
+        <button title="Moscovium">Mc</button>
+        <button title="Livermorium">Lv</button>
+        <button title="Tennessine">Ts</button>
+        <button title="Oganesson">Og</button>
+
+        <!-- Lanthanides & Actinides -->
+        <div class="table lanth-act">
+          <!-- Lanthanides -->
+          <div class="empty" style="grid-column: span 2;"></div>
+          <button title="Lanthanum">La</button>
+          <button title="Cerium">Ce</button>
+          <button title="Praseodymium">Pr</button>
+          <button title="Neodymium">Nd</button>
+          <button title="Promethium">Pm</button>
+          <button title="Samarium">Sm</button>
+          <button title="Europium">Eu</button>
+          <button title="Gadolinium">Gd</button>
+          <button title="Terbium">Tb</button>
+          <button title="Dysprosium">Dy</button>
+          <button title="Holmium">Ho</button>
+          <button title="Erbium">Er</button>
+          <button title="Thulium">Tm</button>
+          <button title="Ytterbium">Yb</button>
+          <button title="Lutetium">Lu</button>
+
+          <!-- Actinides -->
+          <div class="empty" style="grid-column: span 2;"></div>
+          <button title="Actinium">Ac</button>
+          <button title="Thorium">Th</button>
+          <button title="Protactinium">Pa</button>
+          <button title="Uranium">U</button>
+          <button title="Neptunium">Np</button>
+          <button title="Plutonium">Pu</button>
+          <button title="Americium">Am</button>
+          <button title="Curium">Cm</button>
+          <button title="Berkelium">Bk</button>
+          <button title="Californium">Cf</button>
+          <button title="Einsteinium">Es</button>
+          <button title="Fermium">Fm</button>
+          <button title="Mendelevium">Md</button>
+          <button title="Nobelium">No</button>
+          <button title="Lawrencium">Lr</button>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <button id="checkBtn">Check Answer</button>
+        <button id="finishBtn">Finish Test</button>
+      </div>
+       <div id="score">Score: 0</div>  
+      <div id="feedback"></div>
+      <div id="finalScore" style="margin-top:15px; font-weight:bold; font-size:18px;"></div>
+    </section>
+
+    <!-- Right side: Question numbers -->
+    <aside class="question-list" id="question-list"></aside>
+  </main>
+  <footer>
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+  </footer>
+</body>
+</html>

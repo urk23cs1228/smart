@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ohm's Law Lab</title>
+<link rel="stylesheet" href="css/ohms.css">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+
+</head>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,pa', // English & Odia
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // Toggle dropdown when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+<div class="lab-container">
+  <h1>⚡ Ohm's Law Lab ⚡</h1>
+  <div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+
+ 
+  <svg id="wires"></svg>
+ 
+  <div class="circuit-area">
+    <div class="component battery" id="battery">Battery</div>
+    <div class="component resistor" id="resistor">Resistor</div>
+    <div class="component bulb" id="bulb">💡</div>
+  </div>
+ 
+  <div class="controls">
+    <label><b>Set Voltage (V):</b> 
+      <input type="range" id="voltageSlider" min="1" max="20" value="5" oninput="updateLabels()"> 
+      <span id="voltageLabel">5V</span>
+    </label>
+    <br><br>
+    <label><b>Choose Resistance:</b>
+      <select id="resistanceSelect" onchange="updateLabels()">
+        <option value="2">2 Ω</option>
+        <option value="5">5 Ω</option>
+        <option value="10">10 Ω</option>
+      </select>
+    </label>
+    <br><br>
+    <button class="btn" onclick="checkCircuit()">Check Current</button>
+    <button class="btn" onclick="resetCircuit()">Reset</button>
+  </div>
+ 
+  <div class="meters">
+    <div class="meter" id="voltMeter">
+      <div class="needle" id="voltNeedle"></div>
+      <div class="scale"></div>
+      <h3>Voltmeter</h3>
+    </div>
+    <div class="meter" id="ammeter">
+      <div class="needle" id="ampNeedle"></div>
+      <div class="scale"></div>
+      <h3>Ammeter</h3>
+    </div>
+  </div>
+ 
+  <div class="message" id="message"></div>
+
+  <button class="btn" onclick="submitOhmsProgress()">Submit</button>
+<div id="submitMessage" style="margin-top:10px; font-weight:bold;"></div>
+
+</div>
+ <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+<script src="js/ohms.js" defer></script>
+</body>
+</html>
+ 

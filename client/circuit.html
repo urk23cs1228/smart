@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circuit Builder Game</title>
+<link rel="stylesheet" href="css/circuit.css">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+
+</head>
+<div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+
+<body>
+<div class="game-container" id="container">
+  <h1>⚡ Circuit Builder ⚡</h1>
+  <div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+
+ 
+  <svg id="wires"></svg>
+ 
+  <div class="circuit-area">
+    <div class="component battery" id="battery">Battery</div>
+    <div class="component switch" id="switch">Switch</div>
+    <div class="component bulb" id="bulb">💡</div>
+    <div class="component fan" id="fan">🌀</div>
+  </div>
+ 
+  <div class="controls">
+    <button class="btn" onclick="checkCircuit()">Check Circuit</button>
+    <button class="btn" onclick="resetCircuit()">Reset</button>
+    <button class="btn" onclick="submitCircuitProgress()">Submit</button>
+
+  </div>
+
+  <div id="submitMessage" style="margin-top:10px; font-weight:bold;"></div>
+  <div class="message" id="message"></div>
+</div>
+ 
+<audio id="errorSound" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+ <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+<script src="js/circuit.js" defer></script>
+</body>
+</html>

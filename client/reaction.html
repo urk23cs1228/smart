@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemical Reactions Quiz</title>
+  <link rel="stylesheet" href="css/reaction.css">
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+</head>
+<div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,or', // English & Odia
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // Toggle dropdown when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+  <header>
+    <div class="header">
+      <h1>Chemical Reactions Quiz</h1>
+      <div id="score">Score: 0</div>
+      <div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+
+    </div>
+  </header>
+
+  <main class="main-layout">
+    
+    <!-- Difficulty Selection Screen -->
+    <section id="difficulty-container" class="difficulty-select">
+      <h2>Select Difficulty</h2>
+      <div class="difficulty-buttons">
+        <button class="difficulty-btn" data-level="easy">Easy</button>
+        <button class="difficulty-btn" data-level="medium">Medium</button>
+        <button class="difficulty-btn" data-level="hard">Hard</button>
+      </div>
+    </section>
+
+    <!-- Quiz Area (hidden initially) -->
+    <section id="quiz-container" class="question-area" style="display:none;">
+      <div id="question-container"></div>
+      <div class="controls">
+        <!-- Submit button (Correct/Wrong) -->
+        <button id="submitBtn">Submit</button>
+        <!-- Show correct coefficients -->
+        <button id="checkBtn">Check Answer</button>
+        <!-- Finish Test button -->
+        <button id="finishBtn">Finish Test</button>
+      </div>
+      <div id="feedback"></div>
+      <!-- Final score display -->
+      <div id="finalScore" style="margin-top:15px; font-weight:bold; font-size:18px;"></div>
+    </section>
+
+    <!-- Right side: Question numbers -->
+    <aside id="question-list" class="question-list" style="display:none;"></aside>
+  </main>
+  <footer>
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+  </footer>
+  <script src="js/reaction.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games</title>
+  <link rel="stylesheet" href="css/games.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+  <script src="js/game.js"></script>
+</head>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,or', // English & Odia
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // Toggle dropdown when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+  <header>
+    <div class="header">
+      <h1 class="gradient-text ">Choose Subject</h1>
+      <p>Pick your STEM subject to explore</p>
+      <div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+
+    </div>
+  </header>
+ <main>
+  <section class="grade-section">
+    <div class="grade-container">
+
+      <div class="grade-card blue">
+        <div class="grade-info">
+          <i class="fas fa-square-root-variable fa-2x"></i>
+          <h2>Mathematics</h2>
+        </div>
+        <div class="grade-detail">
+          <p>Chapters: <span class="chapters">12</span></p>
+          <button class="start-quiz-btn" onclick="startquizMath()">Start Playing</button>
+        </div>
+      </div>
+
+      <div class="grade-card red">
+        <div class="grade-info">
+          <i class="fas fa-atom fa-2x"></i>
+          <h2>Physics</h2>
+        </div>
+        <div class="grade-detail">
+          <p>Chapters: <span class="chapters">12</span></p>
+          <button class="start-quiz-btn" onclick="startquizPhy()">Start Playing</button>
+        </div>
+      </div>
+
+      <div class="grade-card green">
+        <div class="grade-info">
+          <i class="fas fa-flask-vial fa-2x"></i>
+          <h2>Chemistry</h2>
+        </div>
+        <div class="grade-detail">
+          <p>Chapters: <span class="chapters">12</span></p>
+          <button class="start-quiz-btn" onclick="startquizChem()">Start Playing</button>
+        </div>
+      </div>
+
+      <div class="grade-card purple">
+        <div class="grade-info">
+          <i class="fas fa-dna fa-2x"></i>
+          <h2>Biology</h2>
+        </div>
+        <div class="grade-detail">
+          <p>Chapters: <span class="chapters">12</span></p>
+          <button class="start-quiz-btn" onclick="startquizBio()">Start Playing</button>
+        </div>
+      </div>
+
+      <div class="grade-card orange">
+        <div class="grade-info">
+          <i class="fas fa-laptop-code fa-2x"></i>
+          <h2>Computer Science</h2>
+        </div>
+        <div class="grade-detail">
+          <p>Chapters: <span class="chapters">12</span></p>
+          <button class="start-quiz-btn" onclick="startquizcs()">Start Playing</button>
+        </div>
+      </div>
+
+     
+      </div>
+
+    </div>
+  </section>
+</main>
+
+  <footer>
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+  </footer>
+</body>
+</html>

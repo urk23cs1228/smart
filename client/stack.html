@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stack Builder Game</title>
+  <link rel="stylesheet" href="css/stack.css"/>
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+  <script src="js/stack.js" defer></script>
+  
+</head>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,or', // English & Odia
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // Toggle dropdown when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<body>
+  <div class="game-container">
+    <!-- Header -->
+    <header class="header">
+      <h1>🧱 Stack Builder</h1>
+      <div id="translate-container">
+  <button id="translate-btn">🌐 Translate</button>
+  <div id="google_translate_element"></div>
+</div>
+
+      <div class="score-display">
+        <span>Score: <span id="score">0</span></span>
+        <span>Level: <span id="level">1</span></span>
+      </div>
+    </header>
+ 
+    <div class="main-content">
+      <!-- Game Area -->
+      <div class="game-area">
+        <div class="instructions">
+          <p id="instruction-text">Drag items to build a stack. Remember: Last In, First Out!</p>
+        </div>
+ 
+        <div class="items-pool">
+          <h3>Available Items:</h3>
+          <div id="items-container" class="items-container"></div>
+        </div>
+ 
+        <div class="stack-area">
+          <h3>Stack (LIFO):</h3>
+          <div id="stack-container" class="stack-container">
+            <div class="stack-base">Stack Base</div>
+          </div>
+        </div>
+ 
+        <div class="action-buttons">
+          <button id="pop-btn" class="action-btn">Pop Top</button>
+          <button id="reset-stack-btn" class="action-btn">Reset Stack</button>
+        </div>
+ 
+        <div id="message-area" class="message-area"></div>
+      </div>
+ 
+      <!-- Questions -->
+      <div class="questions-panel">
+        <h3>Progress</h3>
+        <div class="question-grid" id="question-grid"></div>
+      </div>
+    </div>
+ 
+    <!-- Footer -->
+    <footer class="footer">
+      <button id="submit-btn" class="footer-btn">Submit</button>
+      <button id="check-btn" class="footer-btn">Check</button>
+      <button id="finish-btn" class="footer-btn">Finish</button>
+    </footer>
+  </div>
+<button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+</body>
+</html>
+ 

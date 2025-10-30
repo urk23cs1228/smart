@@ -1,0 +1,197 @@
+
+  * {margin:0; padding:0; box-sizing:border-box;}
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at center, #002200, #000);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+  }
+  .game-container {
+    width: 95%;
+    max-width: 1000px;
+    background: rgba(0, 30, 0, 0.85);
+    border: 2px solid #aaff00;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 0 40px #aaff00;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ccff33;
+    text-shadow: 0 0 15px #ccff33, 0 0 25px #99ff33;
+    animation: pulse 2s infinite alternate;
+  }
+  @keyframes pulse {
+    from { text-shadow: 0 0 10px #ccff33; }
+    to { text-shadow: 0 0 25px #99ff33, 0 0 40px #ccff33; }
+  }
+ 
+  .circuit-area {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+  }
+ 
+  .component {
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(30, 60, 0, 0.9);
+    box-shadow: 0 0 15px #55ff00;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-weight: bold;
+    z-index: 2;
+    cursor: crosshair;
+  }
+  .component:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ccff33, 0 0 40px #55ff00;
+  }
+ 
+  .battery { background: linear-gradient(135deg, #444, #999); }
+  .switch { background: linear-gradient(135deg, #224422, #557755); }
+  .bulb { background: linear-gradient(135deg, #333300, #888800); }
+  .fan { background: linear-gradient(135deg, #113322, #225544); }
+ 
+  .glow {
+    background: radial-gradient(circle, #ffff66, #ffdd33, #ccaa00);
+    box-shadow: 0 0 40px #ffff99, 0 0 70px #ffee33;
+  }
+ 
+  .spin {
+    animation: spinFan 1s linear infinite;
+  }
+  @keyframes spinFan {
+    from { transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+  }
+ 
+  .controls {margin-top: 1rem;}
+  .btn {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #aaff00, #55ff33);
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0.5rem;
+    transition: all 0.3s;
+  }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #ccff33;
+  }
+ 
+  .message {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+    min-height: 40px;
+  }
+  .success {background:#99ff33; color:#000;}
+  .error {background:#ff4444;}
+ 
+  svg {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+  path {
+    stroke: #aaff00;
+    stroke-width: 4;
+    fill: none;
+    filter: drop-shadow(0 0 6px #ccff33);
+  }
+ 
+  /* Flash effect for short circuit */
+  .flash {
+    animation: flashRed 0.5s ease-in-out 2;
+  }
+  @keyframes flashRed {
+    0%,100% { background: rgba(0, 30, 0, 0.85); }
+    50% { background: rgba(150,0,0,0.8); }
+  }
+ 
+  /* Sparks */
+  .spark {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 10px yellow, 0 0 20px orange;
+    animation: sparkFly 0.8s linear forwards;
+  }
+  @keyframes sparkFly {
+    from {opacity:1; transform: translate(0,0) scale(1);}
+    to {opacity:0; transform: translate(var(--dx), var(--dy)) scale(0.2);}
+  }
+  /* Position container top right */
+#translate-container {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+/* Hide the default Google dropdown until button is clicked */
+#google_translate_element {
+  display: none;
+  margin-top: 8px;
+}
+
+/* Style for your translate button */
+#translate-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+
+#translate-btn:hover {
+  background: #388E3C;
+}
+.back-btn {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  background: #1976D2;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+
+.back-btn:hover {
+  background: #0D47A1;
+}

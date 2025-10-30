@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Blood Match Arena — Compatibility Game</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/blood.css">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+</head>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,or', // English & Odia
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // Toggle dropdown when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<body>
+  <div class="stage" role="application" aria-label="Blood Match Arena">
+    <header>
+      <div class="title">🩸 Blood Match Arena</div>
+      <div class="hud" aria-hidden="false">
+        <div class="panel">
+          <div class="label">SCORE</div>
+          <div id="score" class="value">0</div>
+        </div>
+        <div class="panel">
+          <div class="label">ENERGY</div>
+          <div id="energy" class="value">100</div>
+        </div>
+        <div class="panel">
+          <div class="label">ROUND</div>
+          <div id="round" class="value">1</div>
+        </div>
+      </div>
+    </header>
+ 
+    <div class="arena-wrap">
+      <div class="arena" id="arena" aria-live="polite">
+        <!-- decorative soft glow -->
+        <div style="position:absolute;inset:0;pointer-events:none;background:
+                    radial-gradient(800px 200px at 50% 20%, rgba(188,72,127,0.02), transparent 15%);"></div>
+ 
+        <!-- center recipient -->
+        <div class="center-stage">
+          <div class="recipient" id="recipient" title="Recipient (click to show rules)">
+            <div class="bag" id="bag">BAG</div>
+            <div class="type" id="recipientType">A+</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.6)">Recipient</div>
+          </div>
+        </div>
+ 
+        <!-- overlay -->
+        <div class="overlay" id="overlay">
+          <div class="card">
+            <div class="big" id="overlayTitle">Round Over</div>
+            <div id="overlayText">You scored 0 points</div>
+            <div style="height:12px"></div>
+            <button class="btn alt" id="nextBtn">Next Round</button>
+          </div>
+        </div>
+      </div>
+ 
+      <aside class="sidebar">
+        <div class="round-ui">
+          <div style="font-weight:800;color:var(--azure)">Round Timer</div>
+          <div class="timer" id="timer">
+            <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="60" cy="60" r="52" stroke="rgba(255,255,255,0.04)" stroke-width="12" fill="none"></circle>
+              <circle id="timerArc" cx="60" cy="60" r="52" stroke="url(#grad)" stroke-width="12" stroke-linecap="round" fill="none"
+                      stroke-dasharray="326.7" stroke-dashoffset="0"></circle>
+              <defs>
+                <linearGradient id="grad" x1="0" x2="1">
+                  <stop offset="0%" stop-color="var(--uranian)"/>
+                  <stop offset="100%" stop-color="var(--raspberry)"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="num" id="timeNum">12</div>
+          </div>
+ 
+          <div class="controls">
+            <button class="btn" id="startBtn">Start Round</button>
+            <button class="btn" id="autoBtn">Auto Spawn: ON</button>
+          </div>
+          <div class="instructions">
+            Click compatible donors <strong>before</strong> time runs out.<br/>
+            <div class="hint">Tip: <strong>O−</strong> is universal donor; A+ accepts A or O (± as allowed).</div>
+          </div>
+        </div>
+ 
+        <div class="instructions" style="margin-top:8px">
+          Compatibility rules are applied automatically. Wrong clicks cost energy. Reach 0 energy = Game Over.
+        </div>
+      </aside>
+    </div>
+
+
+    <!-- Finish button -->
+<button id="finishBtn">
+  Finish Game
+</button>
+
+
+
+  </div>
+ <footer>
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+  </footer>
+
+ 
+<script src="js/blood.js" defer></script>
+</body>
+</html>
+ 

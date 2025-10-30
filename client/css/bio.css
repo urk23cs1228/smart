@@ -1,0 +1,144 @@
+body{
+    background:white;
+    font-family: Arial, sans-serif;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color:rgb(233, 21, 233);
+}
+.header h1{
+    font-size:30px;
+}
+.gradient-text {
+      font-weight: bold;
+      background: linear-gradient(180deg, #b611fd, #00a3ee);
+      background-clip: text; 
+      color: transparent; 
+}
+.header p{
+    font-size: 20px;
+    margin-top: 2px;
+}
+.class-selection{
+    padding:20px;
+    width: 100%;
+}
+.class-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    padding: 20px;
+    margin:20px;
+}
+.class-card{
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.3);
+    width: 250px;
+    height:200px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease,box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.class-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 8px 15px rgba(0,0,0,0.3);
+}
+.class-card h2{
+    font-size:24px;
+    margin-bottom:10px;
+}
+.class-card p{
+    font-size:16px;
+    color:#1b1414;
+    line-height:2.0;
+}
+.class-card.yellow{
+    background-color:#f9ed81;
+}
+.class-card.blue{
+    background-color:#81b3f9;
+}
+.class-card.red{
+    background-color:#f98181;
+}
+.class-card.green{
+    background-color:#81f9b3;
+}
+.class-card.purple{
+    background-color:#d981f9;
+}
+.class-card.orange{
+    background-color:#f9a981;
+}
+.class-card.violet{
+    background-color:#b981f9;
+}
+.class-card {
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  background: #fff;
+  overflow: hidden;
+}
+
+.class-card:hover {
+  transform: scale(1.05);
+}
+/* Position container top right */
+#translate-container {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+/* Hide the default Google dropdown until button is clicked */
+#google_translate_element {
+  display: none;
+  margin-top: 8px;
+}
+
+/* Style for your translate button */
+#translate-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+
+#translate-btn:hover {
+  background: #388E3C;
+}
+.back-btn {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  background: #1976D2;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+
+.back-btn:hover {
+  background: #0D47A1;
+}

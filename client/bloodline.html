@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>🧬 Bloodline Predictor: Challenge Mode</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/bloodline.css">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d6efd">
+<link rel="apple-touch-icon" href="/images/logo1.png">
+</head>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        includedLanguages: 'en,or', // English & Odia
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // Toggle dropdown when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("translate-btn");
+    const el = document.getElementById("google_translate_element");
+
+    btn.addEventListener("click", () => {
+      el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+    });
+  });
+</script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<body>
+<div class="container">
+  <h1>🧬 Bloodline Predictor: Challenge Mode</h1>
+  <p class="instructions">Guess the correct child blood groups from the parents shown!</p>
+ 
+  <div class="parent-box" id="parents">Click "Start Game" to begin</div>
+ 
+  <button id="startBtn" onclick="startGame()">▶ Start Game</button>
+  <button id="nextBtn" style="display:none;" onclick="nextRound()">⏭ Next Round</button>
+  <button id="finishBtn" style="display:none;" onclick="finishGame()">🏁 Finish Game</button>
+  <button id="finishBtn" onclick="finishGame()">🏁 Finish Game</button>
+ 
+  <div class="choices" id="choices"></div>
+  <div class="score" id="score">Score: 0</div>
+</div>
+  <footer>
+    <button class="back-btn" onclick="goBack()">⬅ Back</button>
+
+  </footer>
+<script src="js/bloodline.js" defer></script>
+</body>
+</html>
